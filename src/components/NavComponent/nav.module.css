@@ -1,0 +1,152 @@
+.nav{
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 2em;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    }
+    .nav details summary{
+        display: none;
+        list-style: none;
+        justify-content: flex-end;
+        position: relative;
+        padding: 0.5rem;
+        user-select: none;
+    }
+    .nav details{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: row;
+        max-width: 100%;
+        min-width: 50%;
+    }
+    .ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        padding: 1rem 0;
+    }
+    .nav h4{
+        font-size: 1.25rem;
+    }
+    .ul li{
+        padding: 0 .5rem;
+        white-space: nowrap;
+    }
+    .nav a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    
+    .ul li a::after{
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        transition: width .3s;
+    }
+    .ul li a:hover::after{
+        width: 100%;
+    }
+    .darklight{
+      background-color: transparent;
+        border: none;
+        padding: 0.5rem;
+        transition: transform 0.122s ease-in;
+        animation: shadowspin 5s infinite;
+    }
+    @keyframes shadowspin {
+        /* make the shaddow rotate in a circle */
+        0%{
+            text-shadow: 4px 4px 1.5em rgba(255, 255, 255,1),
+                     -5px -6px 1.5em rgba(255, 255, 255,1);
+        }
+        33%{
+            text-shadow: -4px -7px 1.5em rgba(255, 255, 255,1),
+                     4px 4px 1.5em rgba(255, 255, 255,1);
+        }
+        66%{
+            text-shadow: 4px -2px 1.5em rgba(255, 255, 255,1),
+                     -4px 4px 1.5em rgba(255, 255, 255,1);
+        }
+        100%{
+            text-shadow: 4px 6px 1.5em rgba(255, 255, 255,1),
+                     -5px -6px 1.5em rgba(255, 255, 255,1);
+        }
+        
+    }
+    
+    .darklight:hover{
+        animation-play-state: paused;
+        transform: scale(1.725) rotateZ(-360deg);
+    }
+    
+    @keyframes wiggle{
+        0%{
+            transform: rotateZ(0deg)scale(1.725);
+        }
+        33%{
+            transform: rotateZ(15deg)scale(1.725);
+        }
+        66%{
+            transform: rotateZ(-15deg)scale(1.725);
+        }
+        100%{
+            transform: rotateZ(0deg)scale(1.725);
+        }
+    }
+    
+    .darklight:active{
+        animation-play-state: running;
+        animation: wiggle 0.122s ease-in;
+    }
+    [data-theme="dark"] .darklight{
+        animation: none;
+    }
+    [data-theme="dark"] .darklight:hover{
+        animation: wiggle 0.122s ease-in;
+    }
+    [data-theme="light"] .darklight {
+        animation: shadowspin 5s infinite;
+    }
+    [data-theme="light"] .darklight:hover{
+        animation: wiggle 0.122s ease-in;
+    }
+    
+    @media screen and (max-width: 768px){
+        .nav{
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            padding:1em;
+        }
+    
+        .nav details summary{
+            display: inline-flex;
+        }
+        .nav h4{
+            font-size: 1rem;
+            margin-top: .5rem;
+        }
+        .ul{
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .ul li{
+            padding: 0.5rem 0;
+        }
+        .ul li a::after{
+            display: none;
+        }
+    
+    }
+    
