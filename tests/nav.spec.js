@@ -5,7 +5,8 @@ test('nav link "Benjamin Shuster" goes to top of page', async ({ page }) => {
     await page.goto('/');
     // scroll down
     await page.evaluate(() => window.scrollBy(0, 100));
-    let navLink = await page.locator('text=Benjamin Shuster').first();
+    // h4 with the text "Benjamin Shuster" is the first h4 on the page
+    let navLink = await page.locator("nav h4:has-text('Benjamin Shuster')");
     await navLink.waitFor({ state: 'visible' });
     await navLink.click();
     let pageTop = await page.evaluate(() => window.pageYOffset);
