@@ -8,7 +8,7 @@ const Projects = () => {
       <section>
       <h2 className={ComicNeue.className} id="projects">Some of my Projects</h2>
       <div className={styles.cards}>
-  <div className={styles.card}>
+  <div className={[styles.card,"card"].join(" ")}>
     <div className={styles.actions}>
     <Link target="_blank" href="https://chrome.google.com/webstore/detail/njit-schedule-builder-pro/pmnpckcmdalibabddocfiabejkbmcanp" className={styles.action}>
   <span className="material-symbols-rounded">
@@ -38,7 +38,7 @@ const Projects = () => {
     "width": "max(25%, 150px)"
   }} src="images/SBPbar.png" alt="Schedule Builder Profiles Toolbar" />
   </div>
-  <div className={styles.card}>
+  <div className={[styles.card,"card"].join(" ")}>
   <div className={styles.actions}>
       <div className={styles.action}>
         <p title="In Progress" className={RHdisplay.className}>IP</p>
@@ -63,7 +63,7 @@ const Projects = () => {
   </div>
 
 
-  <div className={styles.card}>
+  <div className={[styles.card,"card"].join(" ")}>
   <div className={styles.actions}>
       <Link target="_blank" href="https://web.njit.edu/~bzs6/bzs6-prod" className={styles.action}>
   <span className="material-symbols-rounded">
