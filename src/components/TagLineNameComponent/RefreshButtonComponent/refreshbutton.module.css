@@ -1,0 +1,61 @@
+.refreshButtonWrapper{
+    margin: 0 auto;
+    padding: 1rem;
+    z-index: 1;
+}
+.refreshButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:transparent;
+    border: none;   
+}
+.refreshButton i{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+    user-select: none;
+}
+.refreshButton i:hover{
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.refreshButton i:active{
+    background-color: rgba(255, 255, 255, 1);
+    scale: 0.95;
+}
+
+@media (prefers-color-scheme: dark){
+    .refreshButton i{
+        background-color:rgba(146, 146, 146, 0.25);
+        color: var(--textcolor2);
+    }
+    .refreshButton i:hover{
+        background-color:rgba(146, 146, 146, 0.5);
+    }
+    .refreshButton i:active{
+        background-color:rgba(146, 146, 146, 0.75);
+    }
+}
+[data-theme="dark"] .refreshButton i{
+        background-color:rgba(146, 146, 146, 0.25);
+        color: var(--textcolor2);
+    }
+    [data-theme="dark"] .refreshButton i:hover{
+        background-color:rgba(146, 146, 146, 0.5);
+    }
+    .refreshButton i:active{
+        background-color:rgba(146, 146, 146, 0.75);
+    
+}
+[data-theme="light"] .refreshButton i{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--textcolor1);
+}
+[data-theme="light"] .refreshButton i:hover{
+    background-color: rgba(255, 255, 255, 0.75);
+}

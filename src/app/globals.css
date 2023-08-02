@@ -1,3 +1,32 @@
+:root{
+  --bgcolor1: #F9CC2F;
+  --bgcolor2: #F2D539;
+  --textcolor1: #000000;
+  --textcolor2: #FFFFFF;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root{
+  --bgcolor1: #606060;
+  --bgcolor2: #000000;
+  --textcolor1: #F9CC2F;
+  --textcolor2: #FFFFFF;
+    }
+      
+  }
+  [data-theme="dark"] {
+    --bgcolor1: #606060;
+    --bgcolor2: #000000;
+    --textcolor1: #F9CC2F;
+    --textcolor2: #FFFFFF;
+  }
+  [data-theme="light"] {
+    --bgcolor1: #F9CC2F;
+    --bgcolor2: #F2D539;
+    --textcolor1: #000000;
+    --textcolor2: #FFFFFF;
+  }
+  
   *{
   margin: 0;
   padding: 0;
@@ -5,12 +34,41 @@
   }
   body{
     position: relative;
+    background-color: var(--bgcolor1);
+    transition: background-color 0.5s ease-in-out,color 0.5s ease-in-out;
   }
   .material-symbols-rounded {
     font-variation-settings:
     'FILL' 0,
     'wght' 400,
     'GRAD' 200,
-    'opsz' 48;
-    
+    'opsz' 48
   }
+  section{
+    display: flex;
+  flex-direction: column;
+  /* overflow-x: hidden; */
+  }
+  h2{
+    text-align: center;
+    font-size: 3em;
+    color: var(--textcolor1);
+  }
+  @media screen and (max-width: 600px) {
+    h2{
+      font-size: 2em;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    h2{
+      color: var(--textcolor1);
+    }
+  }
+  [data-theme="dark"] h2{
+    color: var(--textcolor1);
+  }
+  [data-theme="light"] h2{
+    color: var(--textcolor1);
+  }
+  
+  
