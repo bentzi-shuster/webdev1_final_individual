@@ -11,7 +11,7 @@ const Nav = () => {
 let links = [
   {name:"My Toolbox",href:"#toolbox"},
   {name:"Projects",href:"#projects"},
-  {name:"Benefits",href:"#benefits"},
+  {name:"About",href:"#about"},
   {name:"Blog",href:"#blog"},
   {name:"Subscribe",href:"#subscribe"},
 ]
