@@ -6,6 +6,7 @@ test('nav link "Benjamin Shuster" goes to top of page', async ({ page }) => {
     // scroll down
     await page.evaluate(() => window.scrollBy(0, 100));
     let navLink = await page.locator('text=Benjamin Shuster');
+    await navLink.waitFor({ state: 'visible' });
     await navLink.click();
     let pageTop = await page.evaluate(() => window.pageYOffset);
     expect(pageTop).toBe(0);
@@ -16,6 +17,7 @@ test('nav menu is hidden behind hamburger menu on mobile', async ({ page }) => {
     await page.setViewportSize({ width: 385, height: 812 });
     let NavLinks = await page.locator('nav details a').all();
     for (let i = 0; i < NavLinks.length; i++) {
+        await NavLinks[i].waitFor({ state: 'attached' })
         expect(await NavLinks[i].isVisible()).toBe(false);
     }
 })
@@ -34,6 +36,7 @@ test('nav menu is visible on desktop', async ({ page }) => {
 test('check the dark mode toggle', async ({ page }) => {
     await page.goto('/');
     let darkmodetoggle = await page.locator('nav details button');
+    await darkmodetoggle.waitFor({ state: 'visible' })
     await darkmodetoggle.click();
     let darkmodestatus = await page.locator('html').getAttribute('data-theme');
     expect(darkmodestatus).toBe('dark');
@@ -47,6 +50,7 @@ test('check the dark mode toggle with default darkmode', async ({ page,colorSche
     //set prefers-color-scheme to dark
     await page.emulateMedia({ colorScheme: 'dark' });
     let darkmodetoggle = await page.locator('nav details button');
+    await darkmodetoggle.waitFor({ state: 'visible' })
     await darkmodetoggle.click();
     let darkmodestatus = await page.locator('html').getAttribute('data-theme');
     expect(darkmodestatus).toBe('light');
@@ -60,6 +64,7 @@ test('check the dark mode toggle with default ligtMode', async ({ page,colorSche
     //set prefers-color-scheme to dark
     await page.emulateMedia({ colorScheme: 'light' });
     let darkmodetoggle = await page.locator('nav details button');
+    await darkmodetoggle.waitFor({ state: 'visible' })
     await darkmodetoggle.click();
     let darkmodestatus = await page.locator('html').getAttribute('data-theme');
     expect(darkmodestatus).toBe('dark');
@@ -72,6 +77,7 @@ test('check the dark mode toggle with default ligtMode', async ({ page,colorSche
 test('(mobile) check the summary of the nav menu details  element', async ({ page }) => {
     await page.goto('/');
     let navDetails = await page.locator('nav details');
+    await navDetails.waitFor({ state: 'visible' })
     await page.setViewportSize({ width: 385, height: 812 });
     let summary = await navDetails.locator('summary');
     await summary.waitFor({ state: 'visible' })
