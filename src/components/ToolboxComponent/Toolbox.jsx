@@ -1,5 +1,8 @@
 "use client"
-import styles from "./toolbox.module.css"
+import { useState, useRef } from "react";
+import styles from "./toolbox.module.css";
+import { useResize } from "@/lib/useResize";
+import { isMobile } from "@/lib/mobileRegex";
 import { Comic_Neue,Red_Hat_Display } from 'next/font/google'
 const RHdisplay = Red_Hat_Display({subsets: ['latin'],weight: ["700","400"]})
 const ComicNeue = Comic_Neue({subsets: ['latin'],weight: ["700"]})
@@ -95,34 +98,61 @@ const Toolbox = () => {
     }
   ];
 
+  function mouseMoveHandlerRow1(e) {
+    if(isMobile()) return;
+    if(e.shiftKey) return;
+      let x = e.clientX;
+      let containerscrollWidth = row1.current.scrollWidth;
+      let xPercent =( x / window.innerWidth)-(row1Width / window.innerWidth)/2;
+      let scrollAmount = (containerscrollWidth * (xPercent))
+      row1.current.scrollLeft = (scrollAmount)
+    }
+
+    function mouseMoveHandlerRow2(e) {
+      if(isMobile()) return;
+      if(e.shiftKey) return;
+      let x = e.clientX;
+      let containerscrollWidth = row2.current.scrollWidth;
+      let xPercent =( x / window.innerWidth)-(row2Width / window.innerWidth)/2;
+      let scrollAmount = (containerscrollWidth * (xPercent))
+      row2.current.scrollLeft = (scrollAmount)
+
+    }
+  const row1 = useRef(null);
+  const row2 = useRef(null);
+  const { width: row1Width } = useResize(row1);
+  const { width: row2Width } = useResize(row2);
     return (
       <section>
         
       <h2 className={ComicNeue.className} id="toolbox">My Toolbox</h2>
-      <div>  
-      <ul>
-     {ImagePathsRow1.map((obj,index) => {
-        return(
-        <li key={index} style={{"--shadow-color1": obj.ShadowColor[0],"--shadow-color2": obj.ShadowColor[1]}}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className={obj.needsInvert?styles.invertDark:""} src={obj.src} alt={obj.alt} />
-        </li>
-        )
-        })
-      }
-      </ul> 
-      <ul>
-      {ImagePathsRow2.map((obj,index) => {
-        return(
-        <li key={index} style={{"--shadow-color1": obj.ShadowColor[0],"--shadow-color2": obj.ShadowColor[1]}}>
-           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={obj.src} alt={obj.alt} />
-        </li>
-        )
-      })
-      }
-      </ul> 
-      </div>
+      <div>
+            
+  <ul onPointerMove={mouseMoveHandlerRow1} ref={row1}  className={styles.toolbox}>
+    
+ {ImagePathsRow1.map((obj,index) => {
+    return(
+    <li key={index} style={{"--shadow-color1": obj.ShadowColor[0],"--shadow-color2": obj.ShadowColor[1]}}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className={obj.needsInvert?styles.invertDark:""} src={obj.src} alt={obj.alt} />
+    </li>
+    )
+    })
+  }
+  </ul> 
+  <ul onPointerMove={mouseMoveHandlerRow2} ref={row2}  className={styles.toolbox}>
+  {ImagePathsRow2.map((obj,index) => {
+    return(
+    <li key={index} style={{"--shadow-color1": obj.ShadowColor[0],"--shadow-color2": obj.ShadowColor[1]}}>
+       {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={obj.src} alt={obj.alt} />
+    </li>
+    )
+
+  })
+  }
+  </ul> 
+  </div>
       
       </section>
     );

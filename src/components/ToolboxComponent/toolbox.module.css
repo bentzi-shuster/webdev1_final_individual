@@ -1,0 +1,80 @@
+
+.toolbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    flex-direction: row;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    -ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;   /*    Firefox */
+cursor: ew-resize;
+  }
+  /* hide scrollbar all browser */
+  .toolbox::-webkit-scrollbar {
+    display: none;
+  }
+  .toolbox li{
+    list-style: none;
+    position: relative;
+    padding:3rem 1rem;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .toolbox li{
+      padding: 0;
+    }
+  }
+  .toolbox li img{
+    height: 200px;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  .toolbox li::after{
+    top: 15%;
+    right: 25%;
+    background-color: var(--shadow-color1);
+  }
+  .toolbox li::before{
+    bottom: 15%;
+    left: 25%;
+    background-color: var(--shadow-color2);
+  }
+  .toolbox li::before,.toolbox li::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 33%;
+    filter: blur(30px);
+    opacity: 0;
+    transition: opacity 0.5s ease, width 0.5s ease;
+  }
+  .toolbox li:hover::after,.toolbox li:hover::before{
+    opacity: 1;
+    width: 50%;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+  
+  .invertDark{
+    filter: invert(1);
+  }
+  }
+  [data-theme="dark"] .invertDark{
+    filter: invert(1);
+    transition: filter var(--transition);
+  }
+[data-theme="light"] .invertDark{
+    filter: invert(0);
+    transition: filter var(--transition);
+  }
+  @media screen and (max-width: 600px) {
+
+    .toolbox li img{
+      height: 100px;
+    }
+
+  }
