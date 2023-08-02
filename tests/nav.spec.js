@@ -55,7 +55,7 @@ test('check the dark mode toggle with default darkmode', async ({ page,colorSche
     await page.emulateMedia({ colorScheme: 'dark' });
     let darkmodetoggle = await page.locator('nav details button');
     await darkmodetoggle.waitFor({ state: 'visible' })
-    await darkmodetoggle.click();
+    await darkmodetoggle.click({delay:5000});
     let darkmodestatus = await page.locator('html').getAttribute('data-theme');
     expect(darkmodestatus).toBe('light');
     await darkmodetoggle.click();
@@ -85,7 +85,7 @@ test('(mobile) check the summary of the nav menu details  element', async ({ pag
     await page.setViewportSize({ width: 385, height: 812 });
     let summary = await navDetails.locator('summary');
     await summary.waitFor({ state: 'visible' })
-    await summary.click();
+    await summary.click({delay:5000});
     let navLinks = await navDetails.locator('a').all();
     for (let i = 0; i < navLinks.length; i++) {
         await navLinks[i].waitFor({ state: 'visible' })
