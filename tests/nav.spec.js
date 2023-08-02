@@ -25,6 +25,7 @@ test('nav menu is visible on desktop', async ({ page }) => {
     await page.setViewportSize({ width: 1024, height: 768 });
     let NavLinks = await page.locator('nav details a').all();
     for (let i = 0; i < NavLinks.length; i++) {
+        NavLinks[i].waitFor({ state: 'visible' })
         expect(await NavLinks[i].isVisible()).toBe(true);
     }
 })
@@ -73,6 +74,7 @@ test('(mobile) check the summary of the nav menu details  element', async ({ pag
     let navDetails = await page.locator('nav details');
     await page.setViewportSize({ width: 385, height: 812 });
     let summary = await navDetails.locator('summary');
+    summary.waitFor({ state: 'visible' })
     await summary.click();
     let navLinks = await navDetails.locator('a').all();
     for (let i = 0; i < navLinks.length; i++) {
