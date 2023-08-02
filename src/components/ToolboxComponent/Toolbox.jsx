@@ -128,7 +128,7 @@ const Toolbox = () => {
       <h2 className={ComicNeue.className} id="toolbox">My Toolbox</h2>
       <div>
             
-  <ul onPointerMove={mouseMoveHandlerRow1} ref={row1}  className={styles.toolbox}>
+  <ul onPointerMove={mouseMoveHandlerRow1} ref={row1}  className={[styles.toolbox,"toolboxul"].join(" ")}>
     
  {ImagePathsRow1.map((obj,index) => {
     return(
@@ -140,7 +140,7 @@ const Toolbox = () => {
     })
   }
   </ul> 
-  <ul onPointerMove={mouseMoveHandlerRow2} ref={row2}  className={styles.toolbox}>
+  <ul onPointerMove={mouseMoveHandlerRow2} ref={row2}   className={[styles.toolbox,"toolboxul"].join(" ")}>
   {ImagePathsRow2.map((obj,index) => {
     return(
     <li key={index} style={{"--shadow-color1": obj.ShadowColor[0],"--shadow-color2": obj.ShadowColor[1]}}>
