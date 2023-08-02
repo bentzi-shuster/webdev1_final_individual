@@ -3,7 +3,7 @@
   --bgcolor2: #F2D539;
   --textcolor1: #000000;
   --textcolor2: #FFFFFF;
-  
+  --transition: 0.5s ease-in-out;
   }
   @media (prefers-color-scheme: dark) {
     :root{
@@ -35,7 +35,7 @@
   body{
     position: relative;
     background-color: var(--bgcolor1);
-    transition: background-color 0.5s ease-in-out,color 0.5s ease-in-out;
+    transition: background-color var(--transition),color var(--transition);
   }
   .material-symbols-rounded {
     font-variation-settings:
