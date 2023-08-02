@@ -9,7 +9,10 @@ test('nav link "Benjamin Shuster" goes to top of page', async ({ page }) => {
     let navLink = await page.locator("nav h4:has-text('Benjamin Shuster')");
     await navLink.waitFor({ state: 'visible' });
     await navLink.click();
-    let pageTop = await page.evaluate(() => window.pageYOffset);
+    // wait for the page to scroll to the top
+    await page.waitForFunction(() => window.scrollY === 0);
+    // get the page's scroll position
+    let pageTop = await page.evaluate(() => window.scrollY);
     expect(pageTop).toBe(0);
 });
 // on a mobile device, the nav menu is hidden behind a hamburger menu
@@ -85,10 +88,12 @@ test('(mobile) check the summary of the nav menu details  element', async ({ pag
     await summary.click();
     let navLinks = await navDetails.locator('a').all();
     for (let i = 0; i < navLinks.length; i++) {
+        await navLinks[i].waitFor({ state: 'visible' })
         expect(await navLinks[i].isVisible()).toBe(true);
     }
     await summary.click();
     for (let i = 0; i < navLinks.length; i++) {
+        await navLinks[i].waitFor({ state: 'attached' })
         expect(await navLinks[i].isVisible()).toBe(false);
     }
 })
