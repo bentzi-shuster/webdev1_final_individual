@@ -10,7 +10,7 @@ const Subscribe = () => {
         <form className={styles.subscribeForm} action="#" method="POST" onSubmit={(e)=>{e.preventDefault();alert("Thank you for subscribing!");e.target.reset()}} >
           <input required minLength={3} type="text" placeholder="Name" />
           <input required minLength={3} type="email" placeholder="Email" />
-          <button>Subscribe</button>
+          <button type="submit">Subscribe</button>
         </form>     
       </section>
     );
