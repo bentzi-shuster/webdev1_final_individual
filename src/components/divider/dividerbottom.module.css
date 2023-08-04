@@ -1,0 +1,29 @@
+.divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.divider svg {
+    position: relative;
+    display: block;
+    width: calc(134% + 1.3px);
+    height: 93px;
+    transform: rotateY(180deg);
+}
+
+.divider .dividerfill {
+    fill: var(--bgcolor2);
+    transition: fill var(--transition);
+}
+.dividerWrapper{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}

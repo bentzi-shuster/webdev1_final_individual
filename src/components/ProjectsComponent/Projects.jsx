@@ -5,7 +5,7 @@ const RHdisplay = Red_Hat_Display({subsets: ['latin'],weight: ["700","400"]})
 const ComicNeue = Comic_Neue({subsets: ['latin'],weight: ["700"]})
 const Projects = () => {
     return (
-      <section>
+      <section className={styles.projectsSect}>
       <h2 className={ComicNeue.className} id="projects">Some of my Projects</h2>
       <div className={styles.cards}>
   <div className={[styles.card,"card"].join(" ")}>

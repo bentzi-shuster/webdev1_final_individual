@@ -2,7 +2,7 @@
 .card{
     padding: 1rem;
     border-radius: 1rem;
-    border: 3px solid black;
+    border: 3px solid var(--textcolor1);
     position: relative;
     height: 20em;
     width:20em;
@@ -112,4 +112,7 @@
       width:90%;
       height: 8em;
     }
-    
+    .projectsSect{
+      background-color: var(--bgcolor2);
+      transition: background-color var(--transition);
+    }
