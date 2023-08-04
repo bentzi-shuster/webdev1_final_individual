@@ -6,7 +6,7 @@ const Footer = () => {
     return (
       <footer className={[RHdisplay.className,styles.footer].join(" ")}>
       <h4>Benjamin Shuster</h4>
-
+      <a href="/privacy.html">Privacy Policy</a>
     </footer>
     );
   };
