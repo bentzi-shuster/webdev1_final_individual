@@ -8,7 +8,7 @@ const About = () => {
       <section>
 
 <h2 className={ComicNeue.className} id="about">About Me</h2>
-<div className={[styles.bordercardWrapper,RHdisplay.className].join(" ")}>
+<div className={[styles.bordercardWrapper,RHdisplay.className, "bordercardcardwrapper"].join(" ")}>
 <BorderCard>
     <h4>Why I Love Web Dev</h4>
     <p> Web development has captured my heart because it allows me to bring my creativity to life through coding. The process of transforming ideas into interactive and visually appealing websites is incredibly fulfilling. The ability to constantly learn and explore new technologies keeps me engaged and motivated to stay at the forefront of this ever-evolving field. </p>
