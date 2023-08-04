@@ -15,6 +15,7 @@
     background-color: var(--bgcolor1);
     z-index: 1;
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.33);
+    transition: background-color var(--transition),color var(--transition);
     }
     .cards{
     display: flex;
@@ -39,7 +40,7 @@
     }
     .action{
     background-color: var(--bgcolor1);
-    transition: background-color 1s ease;
+    transition: background-color var(--transition);
     padding: 0.0125rem;
     border-radius: 50%;
     border: 2px solid black;

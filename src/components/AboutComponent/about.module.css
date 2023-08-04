@@ -1,0 +1,17 @@
+
+.bordercardWrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(20em, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;   
+  }
+  .bordercardWrapper p{
+    text-indent: 1em;
+  }
+  .bordercardWrapper h4{
+    text-align: center;
+    margin-bottom: 1.5em
+  }
