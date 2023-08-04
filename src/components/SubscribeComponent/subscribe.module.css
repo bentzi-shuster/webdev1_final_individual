@@ -1,0 +1,81 @@
+
+.subscribeForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+    width: 35%;
+    transition: all var(--transition);
+  }
+  .subscribeForm {
+    transition: all var(--transition);
+  }
+  @media only screen and (max-width: 800px){
+    .subscribeForm{
+      width: 75%;
+    }
+  }
+  .subscribeForm button{
+    align-self: flex-end;
+    background-color: var(--textcolor1);
+    border: none;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    color:white;
+    z-index: 1;
+  }
+  /* light mode color white, dark mode color black */
+  @media (prefers-color-scheme: dark) {
+    .subscribeForm button{
+      color:black;
+    }
+  }
+  [data-theme="dark"] .subscribeForm button{
+    color:black;
+  }
+  [data-theme="light"] .subscribeForm button{
+    color:white;
+  }
+  .subscribeForm input[type=text],.subscribeForm input[type=email]{
+    background-color: var(--bgcolor2);
+    color: white;
+    border: 2px solid var(--textcolor1);
+    padding:.75rem .5rem;
+    border-radius: 10px;
+    width: 100%;
+    z-index: 1;
+  }
+  .subscribeForm input[type=text]::placeholder, .subscribeForm input[type=email]::placeholder{
+    color: var(--textcolor1);
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  /* light mode color white, dark mode color black */
+  @media (prefers-color-scheme: dark) {
+    .subscribeForm input[type=text]::placeholder, .subscribeForm input[type=email]::placeholder{
+      color: var(--textcolor2);
+    }
+    .subscribeForm input[type=text],.subscribeForm input[type=email]{
+      color: var(--textcolor2);
+    }
+  }
+  [data-theme="dark"] .subscribeForm input[type=text]::placeholder,[data-theme="dark"] .subscribeForm input[type=email]::placeholder{
+    color: var(--textcolor2);
+  }
+  [data-theme="dark"] .subscribeForm input[type=text],[data-theme="dark"] .subscribeForm input[type=email]{
+    color: var(--textcolor2);
+  }
+  [data-theme="light"] .subscribeForm input[type=text]::placeholder, [data-theme="light"] .subscribeForm input[type=email]::placeholder{
+    color: var(--textcolor1);
+  }
+  [data-theme="light"] .subscribeForm input[type=text],[data-theme="light"] .subscribeForm input[type=email]{
+    color: var(--textcolor1);
+  }
+  .subscribeForm input[type=text]:focus, .subscribeForm input[type=email]:focus{
+    outline: none;
+    border: 2px solid var(--textcolor1);
+  }
+  

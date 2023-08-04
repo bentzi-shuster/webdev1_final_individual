@@ -6,6 +6,7 @@ import { Comic_Neue,Red_Hat_Display } from 'next/font/google'
 import Link from "next/link";
 import NameComponent from "./NameComponent/Name";
 import SocialLinks from "./SocialLinksComponent/SocialLinks";
+import ConnectButton from "./ConnectButtonComponent/ConnectButton";
 const RHdisplay = Red_Hat_Display({subsets: ['latin'],weight: ["700","400"]})
 const ComicNeue = Comic_Neue({subsets: ['latin'],weight: ["700"]})
 const TagLineName = () => {
@@ -78,6 +79,7 @@ function randomTaglineFunc(e){
           <p className={[RHdisplay.className,styles.taglineText].join(" ")}>{text}</p> 
           </div>
           <RefreshButton onClick={randomTaglineFunc} />
+          <ConnectButton />
           </section>
     );
   };
