@@ -15,3 +15,8 @@
     text-align: center;
     margin-bottom: 1.5em
   }
+  .aboutSect{
+    background-color: var(--bgcolor2);
+    transition: background-color var(--transition);
+    overflow: visible;
+  }

@@ -5,7 +5,7 @@ const RHdisplay = Red_Hat_Display({subsets: ['latin'],weight: ["700","400"]})
 const ComicNeue = Comic_Neue({subsets: ['latin'],weight: ["700"]})
 const About = () => {
     return (
-      <section>
+      <section className={styles.aboutSect}>
 
 <h2 className={ComicNeue.className} id="about">About Me</h2>
 <div className={[styles.bordercardWrapper,RHdisplay.className, "bordercardcardwrapper"].join(" ")}>
