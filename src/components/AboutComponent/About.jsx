@@ -5,16 +5,9 @@ const RHdisplay = Red_Hat_Display({subsets: ['latin'],weight: ["700","400"]})
 const ComicNeue = Comic_Neue({subsets: ['latin'],weight: ["700"]})
 const About = () => {
     return (
-      <section className={[styles.bgcolor1,styles.curveSection3].join(" ")} 
-style={{
-  paddingTop:"10em"
-  }}
-  >
+      <section>
 
-<h2 style={{
-  padding:"2em 0"
-  }}
- className={ComicNeue.className} id="about">About Me</h2>
+<h2 className={ComicNeue.className} id="about">About Me</h2>
 <div className={[styles.bordercardWrapper,RHdisplay.className].join(" ")}>
 <BorderCard>
     <h4>Well crafted sites</h4>
