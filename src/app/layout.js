@@ -22,11 +22,11 @@ export default function RootLayout({ children }) {
 
   gtag('config', 'G-07J2SQ3D3C');
 
-`}} id="gtag">
+`}} id="gtag"></Script>
+
       <Nav />
         {children}
 
-</Script>
 
         </body>
     </html>
