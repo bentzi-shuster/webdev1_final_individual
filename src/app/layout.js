@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
       <body>
                 
 {/* <!-- Google tag (gtag.js) --> */}
-<Script strategy='worker' async src="https://www.googletagmanager.com/gtag/js?id=G-07J2SQ3D3C"></Script>
-<Script dangerouslySetInnerHTML={{__html:`
+<Script strategy='afterInteractive' src="https://www.googletagmanager.com/gtag/js?id=G-07J2SQ3D3C"></Script>
+<Script strategy='afterInteractive' dangerouslySetInnerHTML={{__html:`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
