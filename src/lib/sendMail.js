@@ -27,7 +27,7 @@ Also, if you want to see my resume, I've attached it to this email.
     // resume ./src/lib/resume.pdf
     {   // file on disk as an attachment
         filename: 'resume.pdf',
-        path: './assets/resume.pdf' // stream this file
+        path: '/assets/resume.pdf' // stream this file
     }
   ]
 };
