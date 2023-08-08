@@ -12,7 +12,7 @@ var transporter = nodemailer.createTransport({
     pass: pass
   }
 });
-export default function makeEmailToUser(toEmail,name) {
+export default async function makeEmailToUser(toEmail,name) {
 var mailOptions = {
   from:`"Benjamin Shuster" <${frommail}>`,
   to: toEmail,
@@ -31,12 +31,14 @@ Also, if you want to see my resume, I've attached it to this email.
     }
   ]
 };
-
+await new Promise((resolve, reject) => {
 transporter.sendMail(mailOptions, function(error, info){
   if (error) {
     console.log(error);
+    reject(error);
   } else {
     // console.log('Email sent: ' + info.response);
+    resolve(info);
   }
 }); 
 }
