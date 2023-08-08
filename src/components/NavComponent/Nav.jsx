@@ -12,7 +12,6 @@ let links = [
   {name:"My Toolbox",href:"#toolbox"},
   {name:"Projects",href:"#projects"},
   {name:"About",href:"#about"},
-  {name:"Blog",href:"#blog"},
   {name:"Subscribe",href:"#subscribe"},
 ]
 let lastToggle = new Date().getTime()
