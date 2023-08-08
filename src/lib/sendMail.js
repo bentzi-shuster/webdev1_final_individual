@@ -42,6 +42,8 @@ transporter.sendMail(mailOptions, function(error, info){
   }
 }); 
 }
+);
+}
 // if(pass){
 // makeEmailToUser('bzs6@njit.edu','Benjamin');
 // }
