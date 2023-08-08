@@ -24,10 +24,9 @@ Thanks for checking out my site. I hope you liked it. I'm always looking for new
 Also, if you want to see my resume, I've attached it to this email.  
   `,
   attachments: [
-    // resume ./src/lib/resume.pdf
-    {   // file on disk as an attachment
+    {   
         filename: 'resume.pdf',
-        path: '/assets/resume.pdf' // stream this file
+        path: 'https://webdev1-final-individual-benjamin-shuster.vercel.app/assets/resume.pdf'
     }
   ]
 };
