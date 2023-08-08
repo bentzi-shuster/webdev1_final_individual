@@ -6,7 +6,7 @@ export async function GET(request){
     let url = request.nextUrl.searchParams
     let email = url.get('email');
     let name = url.get('name');
-    makeEmailToUser(email,name);
+    await makeEmailToUser(email,name);
     return NextResponse.json({message:"email sent"},{status:200});
     }catch(e){
         console.log(e);
