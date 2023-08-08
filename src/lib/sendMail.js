@@ -14,7 +14,7 @@ var transporter = nodemailer.createTransport({
 });
 export default function makeEmailToUser(toEmail,name) {
 var mailOptions = {
-  from: frommail,
+  from:`"Benjamin Shuster" <${frommail}>`,
   to: toEmail,
   subject: 'Thanks for checking out my site',
   text: `
