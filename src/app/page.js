@@ -9,6 +9,9 @@ import Footer from '@/components/FooterComponent/Footer'
 import Blog from '@/components/BlogComponent/Blog'
 import  DividerBottom  from '@/components/divider/DividerBottom'
 import  DividerTop  from '@/components/divider/DividerTop'
+const CookieConsent  = dynamic(() => import('@/components/CookieConsent/Consent'), {
+  ssr: false,
+})
 
 const TagLineName = dynamic(() => import('@/components/TagLineNameComponent/TagLineName'), {
   ssr: false,  // the content is randomly generated and will not be the same on each request so we disable SSR to avoid errors
@@ -23,9 +26,9 @@ export default function Home() {
       <About />
       <DividerBottom />
       <Blog />
-
       <Subscribe />
       <Footer />
+      <CookieConsent />
     </main>
   )
 }
