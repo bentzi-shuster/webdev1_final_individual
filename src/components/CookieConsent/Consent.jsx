@@ -18,7 +18,7 @@ const CookieConsent = () => {
 
   const removeGoogleAnalyticsCookies = () => {
     // List of Google Analytics cookies (as of the last knowledge update)
-    const gaCookies = ['_ga', '_gid', '_gat', '_ga_07J2SQ3D3C'];
+    const gaCookies = ['_ga', '_gid', '_gat', '_ga_07J2SQ3D3C', '_ga_MHKW2KWS'];
     // Loop through the list of cookies and remove them
     gaCookies.forEach(cookieName => {
       document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
